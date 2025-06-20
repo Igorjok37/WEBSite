@@ -1,0 +1,85 @@
+/* 1. Убираем стандартные отступы */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* на всякий случай */
+}
+
+/* 2. Базовые стили для секций */
+section {
+  width: 100%;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+/* 3. Зелёный блок */
+.section-1 {
+  background: radial-gradient(circle, #6b7432 0%, #5b632d 100%, #21240e 100%);
+  padding: 120px 0px 0;  /* убираем нижний паддинг, чтобы волна "прилипла" */
+  position: relative;
+}
+
+
+.section-1__container {
+  display: flex;
+  align-items: center;           /* вертикальное выравнивание */
+  justify-content: space-between;/* промежуток между колонками */
+  max-width: 1200px;             /* центрируем и ограничиваем ширину */
+  margin: 0 auto;
+  flex-wrap: wrap;               /* на мобилках — перенос */
+}
+
+/* Левый столбец: текст */
+.section-1__text {
+  flex: 1;
+  min-width: 280px;              /* чтобы не слишком узко сжималось */
+  padding: 20px;
+}
+
+/* Правый столбец: картинка */
+.section-1__image {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+}
+.section-1__image img {
+  display: block;
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 4. Волна */
+.wave {
+  display: block;       /* чтобы не было пробела под inline-SVG */
+  width: 100vw;         /* во всю ширину экрана */
+  height: 120px;        /* высота волны */
+  margin-left: calc((100% - 100vw) / 2);
+  margin-bottom: -1px;  /* перекрывает возможный шов */
+  line-height: 0;
+}
+
+/* 5. Чёрный блок */
+.section-2 {
+  background: #111;
+  padding: 120px 20px;
+  margin-top: 0;  /* сразу после SVG */
+  position: relative;
+}
+
+.annotation-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.annotation-wrapper .annotation-arrow {
+  position: absolute;
+  top:  50%;
+  right: 500px;   /* = ширина SVG, чтобы он «выступал» вправо */
+  width: 300px;    /* ширина области рисования */
+  height: 200px;   /* высота области */
+  transform: translateY(-50%); /* центрируем по вертикали */
+  pointer-events: none;        /* клики проходят сквозь */
+  overflow: visible;
+}

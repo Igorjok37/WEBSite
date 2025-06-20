@@ -1,33 +1,85 @@
-<!DOCTYPE html> 
-<html lang="eng">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1">
-    <title>Firts WEB site</title>
-    <style>
-        body {
-            font-family: san-serif;
-            background-color: #f73838;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 40px;
-            color: #fffb00;
-        }
-        p {
-            font-size: 18px;
-            color: #1900ff;
-        }
-    </style>
-<head>
-    <body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-        <h1>Hello Želtok</h1>
-        <p>First attempt</p>
-        <img src="FastCat.jpg" alt="FastCat" width="300">
-        <img src="CatHonor.jpg" alt="CatHonor" width="300">
-        <img src="GermanCat.jpg" alt="GermanCat" width="300">
-        <img src="TastyCat.jpg" alt="TastyCat" width="300">
-    </body>
+  <!-- Первый блок (зелёный) -->
+  <section class="section-1">
+    <div class="section-1__container">
+      <!-- Левый столбец: текст -->
+      <div class="section-1__text">
+        <h1>Здоровье начинается с заботы о себе</h1>
+        <p>Вместе мы разберёмся в причинах дискомфорта, скорректируем питание и найдём подходящий именно вам ритм.
+Без жёстких ограничений — только забота, внимание и поддержка.</p>
+      </div>
+      <!-- Правый столбец: картинка -->
+      <div class="section-1__image">
+        <img src="FastCat.jpg" alt="FastCat" width="100">
+      </div>
+    </div> 
+
+    <!-- SVG-волна: fill="#111" = цвет фона второго блока -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0,40
+           C240,80 480,0 720,40
+           C960,80 1200,0 1440,40
+           L1440,120 L0,120 Z"
+        fill="#111" />
+    </svg>
+  </section>
+
+  <!-- Второй блок (чёрный) -->
+<section class="section-2">
+  <div class="section-1__container">
+    <!-- Левая колонка: картинка + обёртка для стрелки -->
+    <div class="section-1__image annotation-wrapper">
+      <img src="CatHonor.jpg" alt="CatHonor" width="100">
+
+      <!-- SVG-стрелка -->
+      <svg class="annotation-arrow" viewBox="0 0 300 150" preserveAspectRatio="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead" markerWidth="6" markerHeight="6"
+                  refX="0" refY="3" orient="auto">
+            <polygon points="0 0,6 3,0 6" fill="red"/>
+          </marker>
+        </defs>
+
+        <!--
+          1) Путь начинается «снаружи» справа: M280,75
+          2) Лёгкая кривая → точка у самой картинки: 20,75
+          3) marker-end рисует наконечник на конце пути
+        -->
+        <path id="arrow2"
+              d="M20,75 
+                 C120,85 200,75 280,75"
+              stroke="red" stroke-width="3" fill="none"
+              marker-end="url(#arrowhead)" />
+
+        <!-- Текст вдоль пути, остаётся «правильным» -->
+        <text font-size="14" fill="red" font-family="sans-serif">
+          <textPath href="#arrow2" startOffset="3%" method="stretch" spacing="auto">
+            Да, это я!
+          </textPath>
+        </text>
+      </svg>
+    </div>
+      <!-- Левый столбец: текст -->
+      <div class="section-1__text">
+        <h1>Привет! Меня зовут Плотва.</h1>
+        <p>Я нутрициолог с медицинским образованием и опытом работы медсестрой.
+Помогаю людям наладить питание, восстановить баланс в теле и почувствовать себя энергичнее и увереннее.
+Верю, что забота о себе начинается с простых шагов — и я с радостью пройду этот путь вместе с вами.</p>
+      </div>
+    </div> 
+  </section>
+
+</body>
 </html>
